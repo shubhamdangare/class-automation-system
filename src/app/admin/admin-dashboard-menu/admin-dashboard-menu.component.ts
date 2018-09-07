@@ -8,6 +8,8 @@ import * as $ from 'jquery';
 })
 export class AdminDashboardMenuComponent implements OnInit {
 
+  componentName = 'admin-dashboard';
+
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +18,10 @@ export class AdminDashboardMenuComponent implements OnInit {
           $('#sidebar').toggleClass('active');
       });
   });
+  }
+
+  loadComponent(componentName) {
+    this.componentName = componentName;
   }
 
 }

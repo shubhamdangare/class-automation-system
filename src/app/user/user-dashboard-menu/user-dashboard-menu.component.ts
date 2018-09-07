@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDashboardMenuComponent implements OnInit {
 
+  componentName = 'dashboard';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  loadComponent(componentName) {
+    this.componentName = componentName;
+  }
 }

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserDashboardMenuComponent } from './user-dashboard-menu/user-dashboard-menu.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
-  declarations: [UserDashboardMenuComponent]
+  declarations: []
 })
 export class UserModule { }

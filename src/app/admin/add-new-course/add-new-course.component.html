@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title><h2>Add New Course</h2></mat-card-title>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+      <form>
+          <mat-form-field class="form-width">
+              <input matInput placeholder="Course Name">
+            </mat-form-field>
+            <mat-form-field class="form-width">
+              <input matInput placeholder="Course Short description">
+            </mat-form-field>
+            <mat-form-field class="form-width">
+              <textarea matInput placeholder="Course Full description"></textarea>
+            </mat-form-field>
+            <mat-form-field class="form-width">
+              <input matInput placeholder="Course Content">
+            </mat-form-field>
+            <div>
+              <label>Course Image : </label>
+              <input type="file">
+            </div>
+            <hr>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Add</button>
+    </mat-card-actions>
+  </mat-card>

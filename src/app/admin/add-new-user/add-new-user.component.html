@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>Add New User</h2></mat-card-title>
+  </mat-card-header>
+  <hr>
+  <mat-card-content>
+    <form>
+        <mat-form-field class="form-width">
+            <input matInput placeholder="Name">
+          </mat-form-field>
+          <mat-form-field class="form-width">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <mat-form-field class="form-width">
+            <input type="password" matInput placeholder="Password">
+          </mat-form-field>
+          <mat-form-field class="form-width">
+            <textarea matInput placeholder="Address"></textarea>
+          </mat-form-field>
+          <div>
+            <label class="checkbox-label">Gender : </label>
+            <mat-checkbox>Male</mat-checkbox>
+            <mat-checkbox class="checkbox-padding">Female</mat-checkbox>
+          </div>
+          <mat-form-field class="form-width">
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="tel" matInput placeholder="Mobile No">
+          </mat-form-field>
+          <mat-form-field class="form-width">
+            <input matInput placeholder="College Name">
+          </mat-form-field>
+          <mat-form-field class="form-width">
+            <input matInput placeholder="Batch Name">
+          </mat-form-field>
+          <hr>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Add</button>
+  </mat-card-actions>
+</mat-card>

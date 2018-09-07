@@ -17,6 +17,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginAndRegistrationModule } from './login-and-registration/login-and-registration.module';
 import { AdminModule } from './admin/admin.module';
 import { UserDashboardMenuComponent } from './user/user-dashboard-menu/user-dashboard-menu.component';
+import { UserModule } from './user/user.module';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-profile.component';
+import { AddNewUserComponent } from './admin/add-new-user/add-new-user.component';
+import { AddNewCourseComponent } from './admin/add-new-course/add-new-course.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,12 @@ import { UserDashboardMenuComponent } from './user/user-dashboard-menu/user-dash
     ContactUsComponent,
     HomeComponent,
     PageNotFoundComponent,
-    UserDashboardMenuComponent
+    UserDashboardMenuComponent,
+    UserDashboardComponent,
+    UserProfileComponent,
+    EditUserProfileComponent,
+    AddNewUserComponent,
+    AddNewCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +50,8 @@ import { UserDashboardMenuComponent } from './user/user-dashboard-menu/user-dash
     AppRoutingModule,
     MatCardModule,
     LoginAndRegistrationModule,
-    AdminModule
+    AdminModule,
+    UserModule
   ],
   bootstrap: [AppComponent]
 })
