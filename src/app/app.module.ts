@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { EditUserProfileComponent } from './user/edit-user-profile/edit-user-profile.component';
 import { AddNewUserComponent } from './admin/add-new-user/add-new-user.component';
 import { AddNewCourseComponent } from './admin/add-new-course/add-new-course.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -44,14 +46,15 @@ import { AddNewCourseComponent } from './admin/add-new-course/add-new-course.com
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpModule,
     AppRoutingModule,
     MatCardModule,
     LoginAndRegistrationModule,
     AdminModule,
-    UserModule
+    UserModule,
+    AngularFontAwesomeModule
   ],
   bootstrap: [AppComponent]
 })

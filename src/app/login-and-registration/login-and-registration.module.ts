@@ -4,6 +4,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MyAccountComponent } from './my-account/my-account.component';
 
@@ -13,7 +15,9 @@ import { MyAccountComponent } from './my-account/my-account.component';
     MatTabsModule,
     MatInputModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   declarations: [MyAccountComponent]
 })

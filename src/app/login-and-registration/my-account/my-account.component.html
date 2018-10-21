@@ -7,54 +7,71 @@
             <mat-tab-group mat-stretch-tabs>
               <mat-tab label="Login">
                 <div class="panel-body">
-                  <form>
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm(loginForm)">
                     <mat-form-field class="form-width">
-                      <input matInput placeholder="Email">
+                      <input matInput placeholder="Email" formControlName="Email">
+                      <mat-error *ngIf="loginForm.get('Email').hasError('required')">Email is required</mat-error>
+                      <mat-error *ngIf="loginForm.controls.Email.hasError('email')">Please Enter Valid Email Address</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <input type="password" matInput placeholder="Password">
+                      <input type="password" matInput placeholder="Password" formControlName="Password">
+                      <mat-error *ngIf="loginForm.get('Password').hasError('required')">Password is required</mat-error>
                     </mat-form-field>
                     <hr>
                     <div>
                       <mat-checkbox>Remember Me</mat-checkbox>
                     </div>
                     <hr>
-                    <button mat-raised-button color="primary" class="btn-login">Login</button>
+                    <button type="submit" mat-raised-button color="primary" class="btn-login" [disabled]="loginForm.invalid">Login</button>
                   </form>
                 </div>
               </mat-tab>
               <mat-tab label="Registartion">
                 <div class="panel-body">
-                  <form>
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterForm">
                     <mat-form-field class="form-width">
-                      <input matInput placeholder="Name">
+                      <input matInput placeholder="Name" formControlName="Name">
+                      <mat-error *ngIf="registerForm.get('Name').hasError('required')">Name is required</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <input matInput placeholder="Email">
+                      <input matInput placeholder="Email" formControlName="Email">
+                      <mat-error *ngIf="registerForm.get('Email').hasError('required')">Email is required</mat-error>
+                      <mat-error *ngIf="registerForm.controls.Email.hasError('email')">Please Enter Valid Email Address</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <input type="password" matInput placeholder="Password">
+                      <input type="password" matInput placeholder="Password" formControlName="Password">
+                      <mat-error *ngIf="registerForm.get('Password').hasError('required')">Password is required</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <textarea matInput placeholder="Address"></textarea>
+                      <textarea matInput placeholder="Address" formControlName="Address"></textarea>
+                      <mat-error *ngIf="registerForm.get('Address').hasError('required')">Address is required</mat-error>
                     </mat-form-field>
                     <div>
                       <label class="checkbox-label">Gender : </label>
-                      <mat-checkbox>Male</mat-checkbox>
-                      <mat-checkbox class="checkbox-padding">Female</mat-checkbox>
+                      <mat-radio-group formControlName="Gender">
+                        <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female" class="radio-button-padding">Female</mat-radio-button>
+                      </mat-radio-group>
+                      <mat-error *ngIf="!registerForm.get('Gender').valid">Gender is required</mat-error>
                     </div>
                     <mat-form-field class="form-width">
                       <span matPrefix>+91 &nbsp;</span>
-                      <input type="tel" matInput placeholder="Mobile No">
+                      <input type="number" matInput placeholder="Mobile No" formControlName="Mobile">
+                      <mat-error *ngIf="registerForm.get('Mobile').hasError('required')">Mobile is required</mat-error>
+                      <mat-error *ngIf="registerForm.get('Mobile').hasError('maxLength')">Please Enter Valid Mobile Number</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <input matInput placeholder="College Name">
+                      <input matInput placeholder="College Name" formControlName="CollegeName">
+                      <mat-error *ngIf="registerForm.get('CollegeName').hasError('required')">College Name is required</mat-error>
                     </mat-form-field>
                     <mat-form-field class="form-width">
-                      <input matInput placeholder="Batch Name">
+                      <input matInput placeholder="Batch Name" formControlName="BatchName">
+                      <mat-error *ngIf="registerForm.get('BatchName').hasError('required')">Batch Name is required</mat-error>
                     </mat-form-field>
+                    <mat-checkbox formControlName="isTCAccepted">Please Accept Terms and Conditions.</mat-checkbox>
+                    <mat-error *ngIf="registerForm.get('isTCAccepted').hasError('required')">Please Accept Terms and Condition</mat-error>
                     <hr>
-                    <button mat-raised-button color="primary" class="btn-login">Register</button>
+                    <button type="submit" mat-raised-button color="primary" class="btn-login" [disabled]="registerForm.invalid">Register</button>
                   </form>
                 </div>
               </mat-tab>
